@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simultaneous Equation Calculator</title>
+
+    <style>
+        body{
+            margin: 20px;
+            padding: 0;  
+            font-family: "Dancing Script", cursive;
+            background-color: #c5c5c5;
+            align-items: center;
+            text-align: center;
+        }
+        .h1{
+            font-size: 35px;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+        }
+        .h4{
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        label{
+            display: block;
+            padding-bottom: 10px;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 10px
+        }
+        input{
+            padding-left: 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border: none;
+            border-radius: 20px; 
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .first{
+            display: flex;
+        }
+        .second{
+            display: flex;
+        }
+        .btn-1{
+            display: block;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            border: none;
+            border-radius: 20px; 
+            margin-left: 10px;
+            margin-bottom: 17px; 
+            font-weight: bolder;
+            font-size: 20px;
+            background-color: #b8b3b3;    
+        }
+        button:hover{
+            color: #000;
+            background-color: #9f9a9a;
+            transition: .25s;
+            cursor: pointer;
+        }    
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .first{
+            margin-bottom: 50px;
+        }    
+        .second{
+            margin-bottom: 30px;
+        }
+        .p{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: block;
+            padding: 10px 50px;
+            border: none;
+            border-radius: 20px; 
+            margin: 10px;
+            font-weight: bolder;
+            font-size: 20px;
+            background-color: #b8b3b3;
+            text-align: right; 
+            margin-top: 30px;
+        }
+
+        @media (max-width: 760px) {
+            *{
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+            .first{
+                font-size: 15px;
+                display: block;
+                width: 100%;
+            }
+            input{
+                width: 90%;
+            }
+            .second{
+                font-size: 15px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">Simultaneous Equation Calculator</h1>
+    <h4 class="h4">Simultaneous equations involve solving multiple equations with multiple unknowns at the same time. They're crucial for
+    understanding relationships between variables and find applications in diverse fields like physics, engineering, and
+    economics. Mastering simultaneous equations enhances problem-solving skills and helps analyze complex systems
+    effectively. <br>
+        <h4 class="h4">Simultaneous Equation formula </h4>
+        <p class="p">Equation 1:
+             <span id="eq1">a<sub>11</sub>x<sub>1</sub> + a<sub>12</sub>x<sub>2</sub> + ... +
+                a<sub>1n</sub>x<sub>n</sub> = b<sub>1</sub></span>
+        </p>
+        <p class="p">Equation 2:
+             <span id="eq2">a<sub>21</sub>x<sub>1</sub> + a<sub>22</sub>x<sub>2</sub> + ... +
+                a<sub>2n</sub>x<sub>n</sub> = b<sub>2</sub></span>
+        </p>
+    </h4>
+
+    <form id = "equationForm">
+        <div class="first">
+            <label for="a1">Enter a1 Value: </label> 
+            <input type="text" id="a1" placeholder="Enter a1 value: " required>
+            <label for="b1">Enter b1 Value: </label>
+            <input type="text" id="b1" placeholder="Enter b1 value: " required>
+            <label for="c1">Enter c1 Value: </label>
+            <input type="text" id="c1" placeholder="Enter c1 value: " required>
+        </div>
+
+        
+        <div class="second">
+            <label for="a2">Enter a2 Value: </label>
+            <input type="text" id="a2" placeholder="Enter a2 value: " required>
+            <label for="b2">Enter b2 Value: </label>
+            <input type="text" id="b2" placeholder="Enter b2 value: " required>
+            <label for="c2">Enter c2 Value: </label>
+            <input type="text" id="c2" placeholder="Enter c2 value: " required>
+        </div>
+
+        <button class="btn-1" type="button" onclick="solveEquations()" id="solve">Solve</button>
+
+    </form>
+
+    <div id="equation"></div>
+    <div id="result"></div>
+    <button class="btn"><a href="/index/MultiCalculator.html" class="">Go back &larr;</a></button>
+
+    <script>
+                
+        function solveEquations() {
+            const a1 = parseFloat(document.getElementById('a1').value);
+            const b1 = parseFloat(document.getElementById('b1').value);
+            const c1 = parseFloat(document.getElementById('c1').value);
+            const a2 = parseFloat(document.getElementById('a2').value);
+            const b2 = parseFloat(document.getElementById('b2').value);
+            const c2 = parseFloat(document.getElementById('c2').value);
+
+            if (isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(a2) || isNaN(b2) || isNaN(c2)) {
+                console.log('Invalid input. Please enter numeric values for coefficients.');
+                document.getElementById('result').innerHTML = 'Invalid input. Please enter numeric values for coefficients.';
+                return; 
+            }
+
+            const determinant = a1 * b2 - a2 * b1;
+
+            if (determinant !== 0) {
+                const x = Math.round((c1 * b2 - c2 * b1) / determinant);
+                const y = Math.round((a1 * c2 - a2 * c1) / determinant);
+
+                document.getElementById('result').innerHTML = `Solution: X = ${x}, Y = ${y}`;
+                document.getElementById('equation').innerHTML = 
+                `
+                    Equations: ${a1}x + ${b1}y + ${c1}z
+                     ${a2}x + ${b2}y + ${c2}z
+
+                `;
+            } else {
+                console.log('The system is either inconsistent or has infinitely many solutions.');
+                document.getElementById('result').innerHTML = 'The system is either inconsistent or has infinitely many solutions.';
+            }
+        }          
+    </script>
+
+</body>
+</html>

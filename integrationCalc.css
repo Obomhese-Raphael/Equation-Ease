@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Dancing Script", cursive;
+    background-color: #c5c5c5;
+    align-items: center;
+    justify-content: center;
+}
+.sub-container h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.sub-container h4 {
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+.sub-container .h4{
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.sub-container p{
+    text-align: center;
+    align-items: center;
+}
+.sub-container a{
+    text-decoration: none;
+    color: inherit;    
+}
+.sub-container a:hover{
+    color: #383535;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    /* margin-bottom: 5px; */
+}
+.a{
+    width: 100%;
+}
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    width: 500px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.fnc{
+    text-align: center;
+}
+
+.var{
+    text-align: center;
+}
+
+button {
+    background-color: #acacac;
+    color: white;
+    width: 50%;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    width: 500px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;background-color: inherit;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a39b9b;
+    transition: .33s;
+}
+
+.result {
+    align-items: center;
+    border: none;
+    justify-items: center;
+    text-align: center;
+
+}
+.btn{
+    background-color: transparent;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+.btn:hover{
+    background-color: #9b9191;
+    transition: .35s;
+}
+.btn a{
+    background-color: inherit;
+    width: 100%;
+}
+.btn a:hover{
+    background-color: inherit;
+    transition: .35s;
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    input,
+    button {
+        width: 90%;
+    }
+}

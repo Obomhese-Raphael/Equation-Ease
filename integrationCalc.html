@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - Integration</title>
+    <link rel="stylesheet" href="/styles/integrationCalc.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/algebrite/1.4.0/algebrite.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-container">
+            <h1>Calculus - Integration</h1>
+            <h4>
+                "Integration is a fundamental concept in calculus, serving as the reverse operation of differentiation.
+                It is used to calculate the accumulation of quantities and to determine the total size, area, volume, or
+                other accumulative measures from infinitesimal contributions."
+            </h4>
+            <h4 class="H4">There are a variety of formulas for solving Integration questions in calculus.
+                <p class="p">
+                    <a
+                        href="https://www.whitman.edu/mathematics/calculus/calculus_08_Techniques_of_Integration.pdf">
+                        &larr; Read more
+                    </a>
+                </p>
+            </h4>
+            <div class="input-group">
+                <label for="functionInput" class="fnc">Function (e.g., x^2 + 3x + 2)</label>
+                <input type="text" id="functionInput" placeholder="Enter the function">
+            </div>
+            <div class="input-group">
+                <label for="variableInput" class="var">Variable of Integration (e.g., x)</label>
+                <input type="text" id="variableInput" placeholder="Enter the variable">
+            </div>
+            <div class="input-group">
+                <button onclick="calculate()">Integrate</button>
+            </div>
+            <div id="result" class="result"></div>
+            <button class="btn"><a href="/index/MultiCalculator.html" class="a">&larr; Back</a></button>
+        </div>
+    </div>
+    <script src="/scripts/integrationCalc.js"></script>
+</body>
+
+</html>

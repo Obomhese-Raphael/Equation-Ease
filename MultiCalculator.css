@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    /* background-color: rgb(23, 19, 19); */
+    background-color: #014562;
+    color: #fff;
+    font-family: "Dancing Script", cursive;
+}
+
+.header{
+    font-size: 45px;
+    text-align: center;
+    margin: 0;
+}
+
+.span1{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+hr{
+    height: .09px;
+    border: none;
+    background-color: rgb(224, 204, 204);
+    margin-top: 15px;
+}
+
+.sub-container .h2{
+    text-align: center;
+    margin-top: 10px
+}
+.sub-container .h3{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.span2{
+    font-family: "Dancing Script", cursive;
+}
+
+.sub-container .btn{
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.btn a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-secondary{
+    text-decoration: none;
+}
+
+.btn-solve {
+    background-color: #c5c5c5;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 250px;
+}
+
+.btn-solve:hover{
+    background-color: #bbb3b3;
+    transition: .25s ease-in;
+}
+
+.btn-solve-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+@media (max-width: 760px) {
+    .sub-container .header{
+        font-size: 25px;
+    }
+    .sub-container .h3{
+        font-size: 20px;
+        width: 80%;
+        max-width: 90%;
+    }
+    .sub-container .br2{
+        display: none;
+    }
+    .sub-container{
+        display: block;
+    }
+}
